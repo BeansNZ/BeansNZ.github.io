@@ -1,0 +1,27 @@
+[class*="flex-"]{
+  display: flex;
+}
+
+[class*="-space-around"]{
+  justify-content: space-around;
+}
+
+[class*="-flex-start"]{
+  justify-content: flex-start;
+}
+
+[class*="-flex-end"]{
+  justify-content: flex-end;
+}
+
+[class*="-space-between"]{
+  justify-content: space-between;
+}
+
+[class*="-wrap"]{
+  flex-wrap: wrap;
+}
+
+[class*="-nowrap"]{
+  flex-wrap: nowrap;
+}
