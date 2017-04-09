@@ -1,6 +1,6 @@
-var token = 'your access token', // learn how to obtain it below
-    userid = 1362124742, // User ID - get it in source HTML of your Instagram profile or look at the next example :)
-    num_photos = 4; // how much photos do you want to get
+var token = '696845800.975527c.47f7440dcb1e4a8fbcee05a1dbe03612',
+    userid = 696845800,
+    num_photos = 10;
 
 $.ajax({
 	url: 'https://api.instagram.com/v1/users/' + userid + '/media/recent', // or /users/self/media/recent for Sandbox
@@ -9,12 +9,15 @@ $.ajax({
 	data: {access_token: token, count: num_photos},
 	success: function(data){
  		console.log(data);
-		//for( x in data.data ){
-			//$('ul').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
-			// data.data[x].images.thumbnail.url - URL of image 150х150
-			// data.data[x].images.standard_resolution.url - URL of image 612х612
-			// data.data[x].link - Instagram post URL
-		//}
+		for( x in data.data ){
+      $('#instaAttach').append( '<div class="card">' +
+                                '<a href="'+ data.data[x].link + '" title="Instagram.com/bellimorelli">' +
+                                '<div class="card-img">' +
+                                '<img src="' + data.data[x].images.low_resolution.url + '">' +
+                                '</div>' +
+                                '</a>' +
+                                '</div>');
+		}
 	},
 	error: function(data){
 		console.log(data); // send the error notifications to console
