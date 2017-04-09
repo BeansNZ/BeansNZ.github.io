@@ -8,8 +8,7 @@ $.ajax({
 	type: 'GET',
 	data: {access_token: token, count: num_photos},
 	success: function(data){
- 		console.log(data);
-		for( x in data.data ){
+      for( x in data.data ){
       $('#instaAttach').append( '<div class="card">' +
                                 '<a href="'+ data.data[x].link + '" title="Instagram.com/bellimorelli">' +
                                 '<div class="card-img">' +
