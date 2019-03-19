@@ -10,7 +10,7 @@
 
 <a href="/..">Return to Home</a>
 
-<a href="src/beer.pdf" title="Beer Title">Beer Document</a>
+<a href="beer.pdf" title="Beer Title" onclick="console.log(this)">Beer Document</a>
 
 
 
@@ -22,7 +22,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-136483313-1', 'auto');
-ga('send', 'pageview');
+ga('send', 'pageview', location.pathname);
 </script>
 </body>
 </html>
